@@ -1,13 +1,12 @@
 #include <stdio.h>
 
 int main() {
-    int num, i = 1;
+    int num;
     
     scanf("%d", &num);
 
-    while (i < num+1) {
+    for (int i = 1; i < num+1; i++) {
         printf("%d ", i);
-        i++;
     }
 
     return 0;

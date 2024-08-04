@@ -30,4 +30,6 @@ int main() {
             printf("%.2f", num1);
         }
     } 
+
+    return 0;
 }

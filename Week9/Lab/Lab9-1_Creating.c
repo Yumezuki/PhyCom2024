@@ -8,25 +8,27 @@ int main() {
     scanf("%d", &size);
 
     // Allocate memory for the array
-    arr = (int*) malloc(size * sizeof(int));
+    arr = (int *) malloc(size * sizeof(int));
 
     // Populate the array
     for (i = 0; i < size; i++)
-        *(arr) = i + 1;
+        *(arr + i) = i + 1;
 
-    int *ptr = arr + size;  // Point to the first element of the array
+    int *ptr = arr;  // Point to the first element of the array
 
     // Print the array in order using pointers
     printf("Array elements in order: ");
-    while (arr)
-        printf("%d ", arr);
+    while (ptr < arr + size)
+        printf("%d ", *ptr++);
 
     printf("\n");
 
     // Print the array in reverse using pointers
     printf("Array elements in reverse: ");
+    ptr = arr + size - 1;  // Point to the last element
     while (ptr >= arr)
-        printf("%d ", *ptr--);  // Move the pointer to the previous element
+        printf("%d ", *ptr--);
+
     printf("\n");
 
     // Free the allocated memory

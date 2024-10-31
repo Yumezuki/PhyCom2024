@@ -7,12 +7,12 @@
 #include <WiFiS3.h>
 #include <MQTTClient.h>
 
-const char WIFI_SSID[] = ";-;";          // CHANGE TO YOUR WIFI SSID
-const char WIFI_PASSWORD[] = "23092547";  // CHANGE TO YOUR WIFI PASSWORD
+const char WIFI_SSID[] = "";          // CHANGE TO YOUR WIFI SSID
+const char WIFI_PASSWORD[] = "";  // CHANGE TO YOUR WIFI PASSWORD
 
 const char MQTT_BROKER_ADRRESS[] = "phycom.it.kmitl.ac.th";  // CHANGE TO MQTT BROKER'S ADDRESS
 const int MQTT_PORT = 1883;
-const char MQTT_CLIENT_ID[] = "Yumezuki";  // CHANGE IT AS YOU DESIRE
+const char MQTT_CLIENT_ID[] = "";  // CHANGE IT AS YOU DESIRE
 const char MQTT_USERNAME[] = "";                                            // CHANGE IT IF REQUIRED, empty if not required
 const char MQTT_PASSWORD[] = "";                                            // CHANGE IT IF REQUIRED, empty if not required
 
@@ -195,7 +195,7 @@ void sendFood() {
   if (distanceCm > 20) {
     foodBuffer_str = "off";
   } else {
-    foodBuffer_str = String(distanceCm); // ถ้าระยะทางไม่เกิน ให้แสดงค่าเซนเซอร์
+    foodBuffer_str = "on"; // ถ้าระยะทางไม่เกิน
   }
 
   char foodBuffer[10];

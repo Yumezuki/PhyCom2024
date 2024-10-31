@@ -22,6 +22,9 @@ const char SUBSCRIBE_TOPIC[] = "MockExam/66070223";  // CHANGE IT AS YOU DESIRE
 
 const int PUBLISH_INTERVAL = 60 * 1000;  // 60 seconds
 
+const int trigPin = 3;
+const int echoPin = 2;
+
 WiFiClient network;
 MQTTClient mqtt = MQTTClient(256);
 
@@ -29,6 +32,9 @@ unsigned long lastPublishTime = 0;
 
 void setup() {
   Serial.begin(9600);
+
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
 
   int status = WL_IDLE_STATUS;
   while (status != WL_CONNECTED) {

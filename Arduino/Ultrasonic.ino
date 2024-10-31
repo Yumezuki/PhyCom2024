@@ -127,7 +127,7 @@ void sendToMQTT() {
   if (distanceCm > 20) {
     foodBuffer_str = "off";
   } else {
-    foodBuffer_str = String(distanceCm); // ถ้าระยะทางไม่เกิน ให้แสดงค่าเซนเซอร์
+    foodBuffer_str = "on"; // ถ้าระยะทางไม่เกิน ให้แสดงค่าเซนเซอร์
   }
   // delay(1000); // หน่วงเวลา 1 วินาที
 

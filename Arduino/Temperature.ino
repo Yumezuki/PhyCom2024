@@ -7,20 +7,20 @@
 #include <WiFiS3.h>
 #include <MQTTClient.h>
 
-const char WIFI_SSID[] = ";-;";          // CHANGE TO YOUR WIFI SSID
-const char WIFI_PASSWORD[] = "23092547";  // CHANGE TO YOUR WIFI PASSWORD
+const char WIFI_SSID[] = "";          // CHANGE TO YOUR WIFI SSID
+const char WIFI_PASSWORD[] = "";  // CHANGE TO YOUR WIFI PASSWORD
 
 const char MQTT_BROKER_ADRRESS[] = "phycom.it.kmitl.ac.th";  // CHANGE TO MQTT BROKER'S ADDRESS
 const int MQTT_PORT = 1883;
-const char MQTT_CLIENT_ID[] = "Yumezuki";  // CHANGE IT AS YOU DESIRE
+const char MQTT_CLIENT_ID[] = "";  // CHANGE IT AS YOU DESIRE
 const char MQTT_USERNAME[] = "";                                            // CHANGE IT IF REQUIRED, empty if not required
 const char MQTT_PASSWORD[] = "";                                            // CHANGE IT IF REQUIRED, empty if not required
 
 // The MQTT topics that Arduino should publish/subscribe
-const char PUBLISH_TOPIC[] = "MockExam/66070223";    // CHANGE IT AS YOU DESIRE
-const char SUBSCRIBE_TOPIC[] = "MockExam/66070223";  // CHANGE IT AS YOU DESIRE
+const char PUBLISH_TOPIC[] = "66070223";    // CHANGE IT AS YOU DESIRE
+const char SUBSCRIBE_TOPIC[] = "66070223";  // CHANGE IT AS YOU DESIRE
 
-const int PUBLISH_INTERVAL = 60 * 1000;  // 60 seconds
+const int PUBLISH_INTERVAL = 25 * 1000;  // 60 seconds
 
 WiFiClient network;
 MQTTClient mqtt = MQTTClient(256);
@@ -111,24 +111,6 @@ void sendToMQTT() {
   // Print debug information to the Serial Monitor in one line
   Serial.println("Arduino UNO R4 - sent to MQTT: topic: " + String(PUBLISH_TOPIC) + " | payload: " + String(messageBuffer));
 }
-
-// void sendToMQTT() {
-//   // Check if there's data available to read from the Serial Monitor
-//   if (Serial.available() > 0) {
-//     // Read the input from the Serial Monitor as a string
-//     String val_str = Serial.readStringUntil('\n');
-
-//     // Convert the string to a char array for MQTT publishing
-//     char messageBuffer[10];
-//     val_str.toCharArray(messageBuffer, 10);
-
-//     // Publish the message to the MQTT topic
-//     mqtt.publish(PUBLISH_TOPIC, messageBuffer);
-
-//     // Print debug information to the Serial Monitor in one line
-//     Serial.println("Arduino UNO R4 - sent to MQTT: topic: " + String(PUBLISH_TOPIC) + " | payload: " + String(messageBuffer));
-//   }
-// }
 
 void messageHandler(String &topic, String &payload) {
   Serial.println("Arduino UNO R4 - received from MQTT: topic: " + topic + " | payload: " + payload);

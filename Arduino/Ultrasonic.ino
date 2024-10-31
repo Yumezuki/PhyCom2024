@@ -7,20 +7,20 @@
 #include <WiFiS3.h>
 #include <MQTTClient.h>
 
-const char WIFI_SSID[] = ";-;";          // CHANGE TO YOUR WIFI SSID
-const char WIFI_PASSWORD[] = "23092547";  // CHANGE TO YOUR WIFI PASSWORD
+const char WIFI_SSID[] = "";          // CHANGE TO YOUR WIFI SSID
+const char WIFI_PASSWORD[] = "";  // CHANGE TO YOUR WIFI PASSWORD
 
 const char MQTT_BROKER_ADRRESS[] = "phycom.it.kmitl.ac.th";  // CHANGE TO MQTT BROKER'S ADDRESS
 const int MQTT_PORT = 1883;
-const char MQTT_CLIENT_ID[] = "Yumezuki";  // CHANGE IT AS YOU DESIRE
+const char MQTT_CLIENT_ID[] = "";  // CHANGE IT AS YOU DESIRE
 const char MQTT_USERNAME[] = "";                                            // CHANGE IT IF REQUIRED, empty if not required
 const char MQTT_PASSWORD[] = "";                                            // CHANGE IT IF REQUIRED, empty if not required
 
 // The MQTT topics that Arduino should publish/subscribe
-const char PUBLISH_TOPIC[] = "MockExam/66070223";    // CHANGE IT AS YOU DESIRE
-const char SUBSCRIBE_TOPIC[] = "MockExam/66070223";  // CHANGE IT AS YOU DESIRE
+const char PUBLISH_TOPIC[] = "66070223";    // CHANGE IT AS YOU DESIRE
+const char SUBSCRIBE_TOPIC[] = "66070223";  // CHANGE IT AS YOU DESIRE
 
-const int PUBLISH_INTERVAL = 60 * 1000;  // 60 seconds
+const int PUBLISH_INTERVAL = 25 * 1000;  // 60 seconds
 
 const int trigPin = 3;
 const int echoPin = 2;

@@ -1,19 +1,18 @@
 #include <stdio.h>
+#define ROWS 3
+#define COLS 3
 
 int main() {
-    double matrix[3][3];
-
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            scanf("%lf", &matrix[i][j]);
-        }
+    double mat1[ROWS][COLS];
+    for (int i = 0; i < ROWS; i++) {
+        scanf("%lf %lf %lf", &mat1[i][0], &mat1[i][1], &mat1[i][2]);
     }
-
-    if (matrix[0][0] == matrix[1][1] && matrix[1][1] == matrix[2][2]) {
+    if ((mat1[0][0] == mat1[1][1] && mat1[1][1] == mat1[2][2]) 
+    && (mat1[0][1] == 0.0 && mat1[0][2] == 0.0 && mat1[1][0] == 0.0 
+    && mat1[1][2] == 0.0 && mat1[2][0] == 0.0 && mat1[2][1] == 0.0)) {
         printf("This is a scalar matrix");
     } else {
         printf("This is not a scalar matrix");
     }
-
     return 0;
 }
